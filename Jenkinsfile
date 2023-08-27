@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Obtén las credenciales de GitLab definidas en Jenkins
-                    def gitlabCredentials = credentials('mis-credenciales-gitlab') 
+                    def gitlabCredentials = credentials('id-de-credenciales-del-registry') 
                     def username = credentials('usermarc')
 
                     // Utiliza las credenciales para realizar el inicio de sesión en GitLab Container Registry
