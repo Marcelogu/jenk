@@ -9,6 +9,19 @@ pipeline {
             }
         }
 
+        stage('Login to GitLab Container Registry') {
+            steps {
+                script {
+                    // Obtén las credenciales de GitLab definidas en Jenkins
+                    def gitlabCredentials = credentials('mis-credenciales-gitlab') 
+                    def username = credentials('usermarc')
+
+                    // Utiliza las credenciales para realizar el inicio de sesión en GitLab Container Registry
+                    sh "docker login -u ${username} -p ${gitlabCredentials} registry.gitlab.com"
+                }
+            }
+        }
+
         stage('Build and Push Docker Image') {
             environment {
                 // Define las variables de configuración del registro Docker local
