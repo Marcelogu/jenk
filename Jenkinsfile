@@ -17,7 +17,7 @@ pipeline {
                     def username = credentials('usermarc')
 
                     // Utiliza las credenciales para realizar el inicio de sesión en GitLab Container Registry
-                    sh "docker login -u ${username} -p ${gitlabCredentials} registry.gitlab.com"
+                    //sh "docker login -u ${username} -p ${gitlabCredentials} registry.gitlab.com"
                 }
             }
         }
