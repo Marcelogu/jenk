@@ -12,7 +12,7 @@ pipeline {
         stage('Build and Push Docker Image') {
             environment {
                 // Define las variables de configuración del registro Docker local
-                DOCKER_REGISTRY_URL = 'http://127.0.0.0:8' // Cambia por la URL de tu registro local
+                DOCKER_REGISTRY_URL = 'http://registry.gitlab.com' // Cambia por la URL de tu registro local
                 DOCKER_REGISTRY_CREDENTIALS_ID = 'id-de-credenciales-del-registry' // Cambia por el ID de tus credenciales
                 DOCKER_IMAGE_NAME = 'nombre-de-imagen' // Cambia por el nombre deseado para tu imagen
                 DOCKERFILE_PATH = '.' // Directorio actual
