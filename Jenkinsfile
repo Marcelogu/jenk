@@ -22,7 +22,8 @@ pipeline {
             steps {
                 // Construir la imagen Docker
                 script {
-                    def dockerImage = docker.build("${DOCKER_REGISTRY_URL}/${DOCKER_IMAGE_NAME}:${NODEJS_VERSION}", "--build-arg NODEJS_VERSION=${NODEJS_VERSION} ${DOCKERFILE_PATH}")
+                    //def dockerImage = docker.build("${DOCKER_REGISTRY_URL}/${DOCKER_IMAGE_NAME}:${NODEJS_VERSION}", "--build-arg NODEJS_VERSION=${NODEJS_VERSION} ${DOCKERFILE_PATH}")
+                    def dockerImage = docker.build("${DOCKER_IMAGE_NAME}:${NODEJS_VERSION}", "--build-arg NODEJS_VERSION=${NODEJS_VERSION} ${DOCKERFILE_PATH}")
                 }
 
                 // Iniciar sesión en el registro Docker local
