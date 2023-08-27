@@ -29,7 +29,7 @@ pipeline {
                 // Iniciar sesión en el registro Docker local
                 script {
                     withCredentials([string(credentialsId: "${DOCKER_REGISTRY_CREDENTIALS_ID}", variable: 'DOCKER_REGISTRY_CREDENTIALS')]) {
-                        docker.withRegistry("${DOCKER_REGISTRY_URL}", "${DOCKER_REGISTRY_CREDENTIALS_ID}") {
+                        docker.withRegistry("${DOCKER_REGISTRY_URL}", "${DOCKER_REGISTRY_CREDENTIALS}") {
                             // Empujar la imagen al registro Docker local
                             dockerImage.push()
                         }
