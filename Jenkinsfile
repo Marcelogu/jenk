@@ -16,10 +16,10 @@ pipeline {
                     def gitlabCredentials = credentials('id-de-credenciales-del-registry') 
 
                     // Utiliza las credenciales para realizar el inicio de sesión en GitLab Container Registry
-                    sh "echo y ${gitlabCredentials} "
-                    sh "docker login -u ${gitlabCredentials.username} -p ${gitlabCredentials.password} registry.gitlab.com"
-                    sh "docker build -t mi-imagen-nodejs:alpine3.18 ."
-                    sh "docker push mi-imagen-nodejs:alpine3.18"
+                    sh "echo ${gitlabCredentials} "
+                    //sh "docker login -u ${gitlabCredentials.username} -p ${gitlabCredentials.password} registry.gitlab.com"
+                    //sh "docker build -t mi-imagen-nodejs:alpine3.18 ."
+                    //sh "docker push mi-imagen-nodejs:alpine3.18"
                 }
             }
         }
