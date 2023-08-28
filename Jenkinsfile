@@ -16,6 +16,9 @@ pipeline {
                         
                         echo "El nombre de usuario es: ${USERNAME}"
                         echo "La contraseña es: ${PASSWORD}"
+                        sh "docker login -u ${USERNAME} -p ${PASSWORD} registry.gitlab.com"
+                        sh "docker build -t mi-imagen-nodejs:alpine3.18 ."
+                        sh "docker push mi-imagen-nodejs:alpine3.18"
                     }
 
                     // Utiliza las credenciales para realizar el inicio de sesión en GitLab Container Registry
